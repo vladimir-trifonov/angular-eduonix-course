@@ -1,0 +1,62 @@
+<div *ngIf="user" class="container">
+  <div class="row">
+    <div class="col-md-4 pull-left">
+      <br/>
+      <div class="card">
+        <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap" />
+        <div class="card-body">
+          <h4 class="card-title">{{user.name}}</h4>
+          <p class="card-text">
+            <span class="badge badge-primary">{{user.public_repos}} Public Repos</span>
+            <span class="badge badge-secondary">{{user.public_gists}} Public Gists</span>
+            <span class="badge badge-success">{{user.followers}} Followers</span>
+            <span class="badge badge-danger">{{user.following}} Following</span>
+          </p>
+          <a href="{{user.html_url}}" target="_blank" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Username: </strong>
+            {{user.login}}
+          </li>
+          <li class="list-group-item">
+            <strong>Location: </strong>
+            {{user.location}}
+          </li>
+          <li class="list-group-item">
+            <strong>Email: </strong>
+            {{user.email}}
+          </li>
+          <li class="list-group-item">
+            <strong>Blog: </strong>
+            {{user.blog}}
+          </li>
+          <li class="list-group-item">
+            <strong>Member since: </strong>
+            {{user.created_at}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8 pull-left">
+      <br/>
+      <div class="card">
+        <div class="card-header">
+          Repos
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let repo of repos">
+            <h5 class="card-title">{{repo.name}}</h5>
+            <span class="badge badge-secondary">{{repo.watchers}} Watchers</span>
+            <span class="badge badge-success">{{repo.forks}} Forks</span>
+            <p class="card-text">
+              {{repo.description}}
+            </p>
+            <a href="{{repo.html_url}}" target="_blank" class="btn btn-sm btn-primary">Open</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br/>
+</div>
