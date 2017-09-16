@@ -6,8 +6,8 @@ import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 @Injectable()
 export class GithubService {
   private username: string;
-  private client_id = '233c08c48854f709cf4d';
-  private client_secret = 'ae01576ba92ba775fc916cffbe23d4c724d21afb';
+  private client_id = '';
+  private client_secret = '';
 
   constructor(private _http: Http) { }
 
